@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main(){
+
+    
+    int neg = 0;
+    float a = -8.5;
+    int inte = a;
+    float real = a-inte;
+    
+    if (inte < 0)
+    {
+        inte = -inte;
+        real = -real;
+        neg = 1;
+    }
+    int list[8] = {0,};
+    int arr1[8] = {0,};
+    int nth = 8 ;
+    while(inte > 0){
+        list[nth-1] = inte %2;
+        inte = inte/2;
+        nth = nth -1;
+    }
+    
+    if(neg==1){
+        for(int i=0 ; i < 8; i++ ){
+        if(list[i]==1){
+            list[i] = 0;
+        }
+        else if(list[i]==0){
+            list[i] = 1;
+        }
+        }
+    }
+    nth = 0 ;
+    while(real != 0.0){
+        real = real*2;
+        inte = real;
+        printf("%d",inte);
+        arr1[nth] = inte;
+        
+        real = real - inte;
+        nth +=1;
+    }
+    
+    for(int i=0 ; i < 8; i++ ){
+    printf("%d",list[i]);
+    }
+    printf(".");
+    for(int i=0 ; i < 8; i++ ){
+    printf("%d",arr1[i]);
+    }
+    
+}

@@ -37,11 +37,30 @@ int main(){
     while(real != 0.0){
         real = real*2;
         inte = real;
-        printf("%d",inte);
+        
         arr1[nth] = inte;
         
         real = real - inte;
         nth +=1;
+    }
+    if(neg==1){
+        for(int i=0 ; i < 8; i++ ){
+        if(arr1[i]==1){
+            arr1[i] = 0;
+        }
+        else if(arr1[i]==0){
+            arr1[i] = 1;
+        }
+        }
+    }
+    arr1[7] += 1;
+    for(int i=0 ; i < 8; i++ ){
+        for(int j=0 ; j < 8; j++ ){
+        if(arr1[j]== 2){
+            arr1[j]=0;
+            arr1[j-1]+=1;
+        }
+    }
     }
     
     for(int i=0 ; i < 8; i++ ){

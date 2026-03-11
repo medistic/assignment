@@ -57,8 +57,21 @@ int main(){
     for(int i=0 ; i < 8; i++ ){
         for(int j=0 ; j < 8; j++ ){
         if(arr1[j]== 2){
+            if(j==0){
+                list[7]+=1;
+            }
             arr1[j]=0;
             arr1[j-1]+=1;
+        }
+    }
+    for(int i=0 ; i < 8; i++ ){
+        for(int j=0 ; j < 8; j++ ){
+        if(arr1[j]== 2){
+            
+            list[j]=0;
+            if(j==0){
+                break;}
+            list[j-1]+=1;
         }
     }
     }

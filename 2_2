@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+	char list[500];
+	
+	fgets(list,500,stdin);
+	for (int i = 0; i < 500; i++) {
+		if (list[i] >= 'a') {
+			if (list[i] <= 'z') {
+				list[i] -= 32;
+				continue;
+			}
+		}
+		if (list[i] >= 'A') {
+			if (list[i] <= 'Z') {
+				list[i] += 32;
+				continue;
+			}
+		}
+	}
+	for (int i = 0; i < 500; i++) {
+		printf("%c",list[i]);
+		if (("%c",list[i]) == 0) {
+			break;
+		}
+	}
+}

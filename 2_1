@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+	float RN = 0;
+	scanf("%f", &RN);
+	int PM[1] = { 0 };
+	if (RN > 0) {
+		PM[1] = 0;
+	}
+	else {
+		PM[1] = 1;
+		RN = -RN;
+	}
+	int exp[8] = { 1,0, };
+	int num[23] = { 0, };
+
+
+}

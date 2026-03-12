@@ -1,10 +1,12 @@
 #include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
 
 int main() {
 
 
     int neg = 0;
-    float a = -8.5;
+    float a;
+    scanf("%f",a);
     int inte = a;
     float real = a - inte;
 

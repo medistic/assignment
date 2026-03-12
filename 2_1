@@ -6,14 +6,67 @@ int main() {
 	scanf("%f", &RN);
 	int PM[1] = { 0 };
 	if (RN > 0) {
-		PM[1] = 0;
+		PM[0] = 0;
 	}
 	else {
-		PM[1] = 1;
+		PM[0] = 1;
 		RN = -RN;
 	}
-	int exp[8] = { 1,0, };
+	int exp[8] = { 0, };
 	int num[23] = { 0, };
+	int integ = RN;
+	int inte = 0;
+	float under = RN - integ;
+	int nth = 0;
+	int ex = 0;
+	int dp = 0;
+	int dp1 = 0;
+	
+	
+	while (integ > 0) {
+		num[nth] = integ % 2;
+		integ = integ / 2;
+		nth += 1;
+		ex += 1;
+	}
+	dp = nth - 1;
+	dp1 = dp;
+	while (under != 0.0) {
+		if (nth > 22) {
+			break;
+		}
+		under = under * 2;
+		inte = under;
 
+		num[nth] = inte;
+		
+		under -= inte;
+		nth += 1;
+	}
+	if (ex == 0) {
+		while (num[dp] != 0) {
+			dp += 1;
+			ex -= 1;
 
+		}
+	}
+	nth = 8;
+	ex += 127;
+	while (ex > 0) {
+		exp[nth-1] = ex % 2;
+		ex = ex / 2;
+		nth -= 1;
+		
+	}
+	printf("%d", PM[0]);
+	printf("/");
+	for (int i = 0; i < 8; i++) {
+		printf("%d", exp[i]);
+	}
+	printf("/");
+	
+	for (int i = 0; i < 23; i++) {
+		printf("%d", num[i]);
+	}
+	
 }

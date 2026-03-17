@@ -13,7 +13,7 @@ int main() {
 		RN = -RN;
 	}
 	int exp[8] = { 0, };
-	int num[23] = { 0, };
+	int num[24] = { 0, };
 	int integ = RN;
 	int inte = 0;
 	float under = RN - integ;
@@ -21,15 +21,18 @@ int main() {
 	int ex = 0;
 	int dp = 0;
 	int dp1 = 0;
-	
-	
+
+
 	while (integ > 0) {
 		num[nth] = integ % 2;
 		integ = integ / 2;
 		nth += 1;
 		ex += 1;
 	}
-	dp = nth - 1;
+	if (ex != 0) {
+		ex -= 1;
+	}
+	dp = nth -1;
 	dp1 = dp;
 	while (under != 0.0) {
 		if (nth > 22) {
@@ -39,7 +42,7 @@ int main() {
 		inte = under;
 
 		num[nth] = inte;
-		
+
 		under -= inte;
 		nth += 1;
 	}
@@ -53,10 +56,10 @@ int main() {
 	nth = 8;
 	ex += 127;
 	while (ex > 0) {
-		exp[nth-1] = ex % 2;
+		exp[nth - 1] = ex % 2;
 		ex = ex / 2;
 		nth -= 1;
-		
+
 	}
 	printf("%d", PM[0]);
 	printf("/");
@@ -64,9 +67,9 @@ int main() {
 		printf("%d", exp[i]);
 	}
 	printf("/");
-	
-	for (int i = 0; i < 23; i++) {
+
+	for (int i = 1; i < 24; i++) {
 		printf("%d", num[i]);
 	}
-	
+	//가수부 정수부분을 없애기 위함
 }

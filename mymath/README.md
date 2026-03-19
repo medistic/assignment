@@ -35,6 +35,7 @@ Gcd{
 		Gcd = i
 }
 }
+
 Lcm{
 	for (i = 2, i =< min ,i++) {
 		if (a % i == 0 && b % i == 0)

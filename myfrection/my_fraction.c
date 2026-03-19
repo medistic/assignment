@@ -57,7 +57,7 @@ fractions divis(fractions i, fractions j) {
 }
 extern fractions abbre(fractions i) {
 
-	int abb = 1;
+	int abb = -1;
 	int least = 2147483647;
 	if (0 > i.den) {
 		i.den = -i.den;
@@ -74,15 +74,18 @@ extern fractions abbre(fractions i) {
 	if (least == 1) {
 		return i;
 	}
-	for (int j = 2; j < least;j++) {
-		if ((i.den % j) == 0) {
-			if ((i.numer % j) == 0) {
-				abb = j;
+	while (abb != 1) {
+		abb = 1;
+		for (int j = 2; j < least;j++) {
+			if ((i.den % j) == 0) {
+				if ((i.numer % j) == 0) {
+					abb = j;
+				}
 			}
 		}
+		i.numer = i.numer / abb;
+		i.den = i.den / abb;
 	}
-	i.numer = i.numer / abb;
-	i.den = i.den / abb;
 	return i;
 }
 extern int testb(fractions i, fractions j , char a) {

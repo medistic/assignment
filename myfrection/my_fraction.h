@@ -3,15 +3,15 @@ typedef struct value{
 	int numer;
 }fractions;
 
-//ÅëºÐÇÏ±â
+//í†µë¶„í•˜ê¸°
 extern int denom( fractions i,fractions j);
-//»çÄ¢¿¬»ê
+//ì‚¬ì¹™ì—°ì‚°
 extern fractions add(fractions i, fractions j);
 extern fractions minus(fractions i, fractions j);
 extern fractions multi(fractions i, fractions j);
 extern fractions divis(fractions i, fractions j);
-//¾àºÐÇÏ±â
+//ì•½ë¶„í•˜ê¸°
 extern fractions abbre(fractions i);
-//¿¬»ê¹üÀ§ °Ë»ç
+//ì—°ì‚°ë²”ìœ„ ê²€ì‚¬
 extern int testb(fractions i, fractions j, char a);
 

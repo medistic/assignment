@@ -1,15 +1,33 @@
-int a,b =0,0
-int GCd,Lcm =0.0
+int a, b = 0, 0
+
+int GCd, Lcm = 0,0
+
 int min = 2147483647
+
 int max = -2147483648
+
+받아오기 a b
+
+if (a < 0){
+
+	print: not good num
+}
+
+if (b < 0) {
+	print: not good num
+}
+
 if (a < min)
 	min = a
+
 if (b < min)
 	min = b
+
 if (a > max)
-	min = a
+	max = a
+
 if (b > max)
-	min = b
+	max = b
 
 Gcd{
 	for (i = max, i = < (a * b) ,i++) {

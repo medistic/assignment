@@ -32,16 +32,11 @@ if (a > max)
 if (b > max)
 	max = b
 
-Gcd{
+Gcd(i,j){
 	for (i = max, i = < (a * b) ,i++) {
 		if(i%a == 0 && i%b == 0)
 		Gcd = i
 }
 }
 
-Lcm{
-	for (i = 2, i =< min ,i++) {
-		if (a % i == 0 && b % i == 0)
-		lcm = i
-}
-}
+lcm = (i * j) / GCD(i, j);

@@ -4,7 +4,7 @@
 
 #include "my_fraction.h"
 
-//ÅëºĞÇÏ±â
+//í†µë¶„í•˜ê¸°
 
 int denom(fractions i, fractions j) {
 	int den = 0;
@@ -12,7 +12,7 @@ int denom(fractions i, fractions j) {
 	return den;
 
 }
-//»çÄ¢¿¬»ê
+//ì‚¬ì¹™ì—°ì‚°
 fractions add(fractions i, fractions j) {
 	
 	fractions answer;
@@ -20,7 +20,7 @@ fractions add(fractions i, fractions j) {
 	answer.numer = 0;
 	answer.numer = i.numer * j.den + i.den * j.numer;
 	answer.den = denom(i, j);
-
+	
 	
 
 	return answer;
@@ -32,7 +32,7 @@ fractions minus(fractions i, fractions j) {
 	answer.numer = 0;
 	answer.numer = i.numer * j.den - i.den * j.numer;
 	answer.den = denom(i, j);
-
+	
 
 
 	return answer;
@@ -43,7 +43,7 @@ fractions multi(fractions i, fractions j) {
 	answer.numer = 0;
 	answer.den = i.den * j.den;
 	answer.numer = i.numer * j.numer;
-
+	
 	return answer;
 }
 fractions divis(fractions i, fractions j) {
@@ -52,7 +52,7 @@ fractions divis(fractions i, fractions j) {
 	answer.numer = 0;
 	answer.den = i.den * j.numer;
 	answer.numer = i.numer * j.den;
-
+	
 	return answer;
 }
 extern fractions abbre(fractions i) {
@@ -71,7 +71,9 @@ extern fractions abbre(fractions i) {
 	if (least > i.numer) {
 		least = i.numer;
 	}
-	
+	if (least == 1) {
+		return i;
+	}
 	for (int j = 2; j < least;j++) {
 		if ((i.den % j) == 0) {
 			if ((i.numer % j) == 0) {
@@ -97,38 +99,28 @@ extern int testb(fractions i, fractions j , char a) {
 		j.numer = -j.numer;
 	}
 	
-	if (a = '+') {
-		if ((2147483647 - i.den * j.numer) < i.den * j.numer) {
+	
+		if ((2147483647 - i.den * j.numer) < j.den * i.numer) {
 			return 1;
+		}
+		if(a =='*'){
+			if ((2147483647 / i.den) < j.den) {
+				return 1;
+			}
+			if ((2147483647 / i.numer) < j.numer) {
+				return 1;
+			}
+		}
+		if (a == '/') {
+			if ((2147483647 / i.den) < j.numer) {
+				return 1;
+			}
+			if ((2147483647 / i.numer) < j.den) {
+				return 1;
+			}
 		}
 		
-	}
-
-	if (a = '-') {
-		if ((-2147483647 + i.den * j.numer)-1 < i.den * j.numer) {
-			return 1;
-		}
-		
-
-	}
-	if (a = '*') {
-		if ((2147483647 / i.den )+1> j.den) {
-			return 1;
-		}
-		if ((2147483647 / i.numer) + 1 > j.numer){
-			return 1;
-				}
-	}
-
-	else if (a = '/') {
-		if ((2147483647 / i.den) + 1 > j.numer) {
-			return 1;
-		}
-		if ((2147483647 / i.numer) + 1 > j.den) {
-			return 1;
-		}
 		return 0;
-	}
 	
 
 }

@@ -14,7 +14,9 @@ if (a < 0){
 }
 
 if (b < 0) {
+
 	print: not good num
+	
 }
 
 if (a < min)

@@ -26,10 +26,14 @@ int main() {
 	float x = 0.0;
 	int xnumer = 0;
 	int xden = 1;
+	long j = 0;
+	char* endptr;
 
 	scanf("%s", str1);
 	scanf(" %c", &opra);
 	scanf("%s", str2);
+	
+	
 	
 	for (int i = 0; i < sizeof(str1);i++) {
 		if (str1[i] == '/') {
@@ -40,9 +44,19 @@ int main() {
 			type[0] = 'F';
 			break;
 		}
+		
 		else
 		{
+			
 			type[0] = 'i';
+		}
+
+	}
+	if (type[0] != 'f' && type[0] != 'F') {
+		j = strtol(str1, &endptr, 10);
+		if (*endptr != 0) {
+			printf("Put an integer in the 1st fraction.");
+			return 0;
 		}
 	}
 	if(type[0]=='f'){
@@ -69,19 +83,18 @@ int main() {
 				x = x * 10;
 				xden = xden * 10;
 				
-				printf("[%d]\n", xnumer);
-				printf("[%d]\n", xden);
+				
 				continue;
 			}
 			else {
 				num1.den = xden;
 				num1.numer = xnumer;
-				printf("[%d]\n", xnumer);
-				printf("[%d]\n", xden);
+				
 			}
 		}
 
 	}
+	
 	for (int i = 0; i < sizeof(str2);i++) {
 		if (str2[i] == '/') {
 			type[0] = 'f';
@@ -91,9 +104,18 @@ int main() {
 			type[0] = 'F';
 			break;
 		}
+		
 		else
 		{
+			
 			type[0] = 'i';
+		}
+	}
+	if (type[0] != 'f' && type[0] != 'F') {
+		j = strtol(str2, &endptr, 10);
+		if (*endptr != 0) {
+			printf("Put an integer in the 2st fraction.");
+			return 0;
 		}
 	}
 	if (type[0] == 'f') {

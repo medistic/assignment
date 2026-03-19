@@ -76,7 +76,7 @@ extern fractions abbre(fractions i) {
 	}
 	while (abb != 1) {
 		abb = 1;
-		for (int j = 2; j < least;j++) {
+		for (int j = 2; j <= least;j++) {
 			if ((i.den % j) == 0) {
 				if ((i.numer % j) == 0) {
 					abb = j;

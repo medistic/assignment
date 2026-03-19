@@ -32,11 +32,15 @@ if (a > max)
 if (b > max)
 	max = b
 
-Gcd(i,j){
-	for (i = max, i = < (a * b) ,i++) {
-		if(i%a == 0 && i%b == 0)
-		Gcd = i
-}
-}
+int lcm(int i, int j) 
+	{
+		int r;
+		while (j != 0) {
+			r = i % j;
+			i = j;
+			j = r;
+		}
+		return i;
+	}
 
-lcm = (i * j) / GCD(i, j);
+gcd = (i * j) / lcm(i, j);

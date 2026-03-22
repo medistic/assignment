@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "square.h"
+#include "my_fraction.h"
 
 int main(int c, char** v) {
 	if (c != 3) {

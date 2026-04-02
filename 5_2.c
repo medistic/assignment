@@ -1,11 +1,11 @@
-#define N 11
+#define N 5
 #include <stdio.h>
 #include <stdlib.h>
 
 int main() {
 	
 	int a[N][N] = { 0 };
-	
+	int sum = 0;
 	a[N/2][0] = 1;
 	
 	int col = 0;
@@ -43,5 +43,33 @@ int main() {
 		}
 		printf("\n");
 	}
+	printf("\n");
+	for (int i = 0; i < N;i++) {
+		for (int j = 0; j < N;j++) {
+			sum += a[i][j];
+		}
+		printf("%dth row: %d\n",i+1 ,sum);
+		sum = 0;
+	}
+	for (int i = 0; i < N;i++) {
+		for (int j = 0; j < N;j++) {
+			sum += a[i][j];
+		}
+		printf("%dth colum: %d\n", i + 1, sum);
+		sum = 0;
+	}
+	for (int i = 0; i < N;i++) {
+		sum += a[i][i];
+	}
+	printf("1st diagonal: %d\n", sum);
+	sum = 0;
+	for (int i = 0; i < N;i++) {
+		for (int j = 0; j < N;j++) {
+			if (i + j == (N - 1)) {
+				sum += a[i][j];
+			}
+		}
+	}
+	printf("2nd diagonal: %d\n", sum);
+	sum = 0;
 }
-

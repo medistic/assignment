@@ -8,17 +8,17 @@
 
 int main() {
 	int sum = 0;
-	int maxim= -2147483647;
+	int maxim = -2147483647;
 	int minim = 2147483647;
 	srand((unsigned int)time(NULL));
 	int a = 0;
 	scanf("%d", &a);
-	int *aptr;
-	aptr = (int *)malloc(a * sizeof(int));
+	int* aptr;
+	aptr = (int*)malloc((a+1) * sizeof(int));
 	int* ptr = aptr;
-	
+
 	for (int i = 0; i < a; i++) {
-		*aptr = rand() % a;
+		*aptr = rand() % (a+1);
 		if (*aptr > maxim) {
 			maxim = *aptr;
 		}
@@ -29,20 +29,20 @@ int main() {
 		aptr++;
 	}
 	aptr = ptr;
-	for (int i = 0; i < X-1; i++) {
+	for (int i = 0; i < a; i++) {
 		printf("%d ", *aptr);
 		aptr++;
 	}
 	aptr = ptr;
 	printf("\n");
-	for (int i = X-1; i > 0; i--) {
+	for (int i = a; i > 0; i--) {
 		printf("%d ", *aptr);
 		aptr++;
 	}
 
 	printf("total: %d\n", sum);
-	printf("maximum: %d\n", maxim );
-	printf("minimum: %d\n", minim );
-	
-	
+	printf("maximum: %d\n", maxim);
+	printf("minimum: %d\n", minim);
+
+
 }

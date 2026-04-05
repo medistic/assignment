@@ -4,7 +4,7 @@
 
 
 int main() {
-
+	int sum = 0;
 	int N = 0;
 	scanf("%d", &N);
 	if (N % 2 != 1) {
@@ -63,4 +63,34 @@ int main() {
 		}
 		printf("\n");
 	}
+	
+	printf("\n");
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			sum += Nptr[i][j];
+		}
+		printf("%dth row: %d\n", i + 1, sum);
+		sum = 0;
+	}
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			sum += Nptr[i][j];
+		}
+		printf("%dth colum: %d\n", i + 1, sum);
+		sum = 0;
+	}
+	for (int i = 0; i < N; i++) {
+		sum += Nptr[i][i];
+	}
+	printf("1st diagonal: %d\n", sum);
+	sum = 0;
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			if (i + j == (N - 1)) {
+				sum += Nptr[i][j];
+			}
+		}
+	}
+	printf("2nd diagonal: %d\n", sum);
+	sum = 0;
 }

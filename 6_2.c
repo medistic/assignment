@@ -20,7 +20,7 @@ int main() {
 	
 	for (int j = 0; j < N; j++) {
 		for (int i = 0; i < N; i++) {
-			Nptr[i][j] =  0 ;
+			*(*(Nptr+i)+j) =  0 ;
 		}
 		
 	}
@@ -29,7 +29,7 @@ int main() {
 
 	int col = 0;
 	int row = N / 2;
-	Nptr[row][col] = 1;
+	*(*(Nptr + col) + row) = 1;
 	for (int i = 2; i <= N * N; i++) {
 		col--;
 		row++;
@@ -40,8 +40,8 @@ int main() {
 		{
 			row = 0;
 		}
-		if (Nptr[row][col] ==0 ) {
-			Nptr[row][col] = i;
+		if (*(*(Nptr + col) + row) == 0) {
+			*(*(Nptr + col) + row) = i;
 		}
 		else {
 			if (col == N - 1) {
@@ -53,13 +53,13 @@ int main() {
 			}
 			col += 2;
 			row--;
-			Nptr[row][col] = i;
+			*(*(Nptr + col) + row) = i;
 		}
 	}
 
 	for (int j = 0; j < N; j++) {
 		for (int i = 0; i < N; i++) {
-			printf(" %d ", Nptr[i][j]);
+			printf(" %d ", *(*(Nptr + i) + j));
 		}
 		printf("\n");
 	}
@@ -67,27 +67,27 @@ int main() {
 	printf("\n");
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
-			sum += Nptr[i][j];
+			sum += *(*(Nptr + i) + j);
 		}
 		printf("%dth row: %d\n", i + 1, sum);
 		sum = 0;
 	}
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
-			sum += Nptr[i][j];
+			sum += *(*(Nptr + i) + j);
 		}
 		printf("%dth colum: %d\n", i + 1, sum);
 		sum = 0;
 	}
 	for (int i = 0; i < N; i++) {
-		sum += Nptr[i][i];
+		sum += *(*(Nptr + i)+i);
 	}
 	printf("1st diagonal: %d\n", sum);
 	sum = 0;
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
 			if (i + j == (N - 1)) {
-				sum += Nptr[i][j];
+				sum += *(*(Nptr + i) + j);
 			}
 		}
 	}

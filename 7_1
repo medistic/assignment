@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+#include <time.h>
+
+int mian() {
+	srand(time(NULL));
+
+	struct student {
+		char name[20];
+		int SID;
+		int grade;
+	};
+	int num=0;
+	scanf("%d", &num);
+	if (num > 100) {
+		printf("not good num");
+		return 0;
+	}
+	
+	struct student *people = (struct student*)malloc(sizeof(struct student) * num);
+
+	for (int i = 0; i < num; i++) {
+		people[i].SID = i + 1;
+		people[i].grade = rand() % 101;
+	}
+
+}

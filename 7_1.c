@@ -11,7 +11,11 @@ int main() {
 		char name[20];
 		int SID;
 		int grade;
+		
 	};
+	int sum = 0;
+	int maxim = -2147483647;
+	int minim = 2147483647;
 	int num = 0;
 	scanf("%d", &num);
 	if (num > 100) {
@@ -36,9 +40,19 @@ int main() {
 		people[i].grade = rand() % 101;
 	}
 	for (int i = 0; i < num; i++) {
+		if (people[i].grade >= maxim) {
+			maxim = people[i].grade;
+		}
+		if (people[i].grade <= minim) {
+			minim = people[i].grade;
+		}
+	}
+	for (int i = 0; i < num; i++) {
 		printf("name:%s", people[i].name);
 		printf("SID: %d\n", people[i].SID);
 		printf("grade: %d\n", people[i].grade);
 	}
+	printf("minimum grade: %d\n", minim);
+	printf("maximum grade: %d\n", maxim);
 
 }

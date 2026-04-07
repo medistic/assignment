@@ -1,58 +1,26 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <time.h>
+#define X 30
+#define X 7
 
-int main() {
-	srand(time(NULL));
 
-	struct student {
-		char name[20];
-		int SID;
-		int grade;
-		
-	};
-	int sum = 0;
-	int maxim = -2147483647;
-	int minim = 2147483647;
-	int num = 0;
-	scanf("%d", &num);
-	if (num > 100) {
-		printf("not good num");
-		return 0;
-	}
 
-	struct student* people = (struct student*)malloc(sizeof(struct student) * num);
+@@ -15,7 +15,7 @@ int main() {
 
-	FILE* fp;
-	fp = fopen("name_list.txt", "r");
-
-	if (fp == NULL) printf("fail to open file\n");
-	
-
-	for (int i = 0; i < num; i++) {
-		(fgets(people[i].name, sizeof(people[i].name), fp));
-	}
-
-	for (int i = 0; i < num; i++) {
-		people[i].SID = i + 1;
-		people[i].grade = rand() % 101;
-	}
-	for (int i = 0; i < num; i++) {
-		if (people[i].grade >= maxim) {
-			maxim = people[i].grade;
+	int N[X] = { 0 };
+	for (int i = 0; i < X; i++) {
+		N[i] = rand() % X;
+		N[i] = rand() % (X+1);
+		if (N[i] > maxim) {
+			maxim = N[i];
 		}
-		if (people[i].grade <= minim) {
-			minim = people[i].grade;
-		}
+@@ -33,7 +33,7 @@ int main() {
+	for (int i = X - 1; i >= 0; i--) {
+		printf("%d ", N[i]);
 	}
-	for (int i = 0; i < num; i++) {
-		printf("name:%s", people[i].name);
-		printf("SID: %d\n", people[i].SID);
-		printf("grade: %d\n", people[i].grade);
-	}
-	printf("minimum grade: %d\n", minim);
-	printf("maximum grade: %d\n", maxim);
 
-}
+	printf("\n");
+	printf("total: %d\n", sum);
+	printf("maximum: %d\n", maxim);
+	printf("minimum: %d\n", minim);

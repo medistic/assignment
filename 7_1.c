@@ -54,5 +54,5 @@ int main() {
 	}
 	printf("minimum grade: %d\n", minim);
 	printf("maximum grade: %d\n", maxim);
-
+	free(people);
 }

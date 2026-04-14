@@ -1,36 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef int elementArrayList;
-typedef struct arrayListType {
-	elementArrayList * data;
-	elementArrayList size;
-	elementArrayList capacity;
+#include "ArrList.h"
 
-}arrayList;
+arrayList* creatArrayList(int size) {
+	arrayList* al;
+	al = (arrayList*)malloc(sizeof(arrayList));
+	al->data = (elementArrayList*)malloc(size * sizeof(elementArrayList));
+	al->size = 0;
+	al->capacity = size;
 
+	return al;
+}
 
-//struct arrayListType {
-//	elementArrayList* data;
-//	elementArrayList size;
-//	elementArrayList capacity;
-//
-//};
-//typedef struct arrayListType arrayList;
-//와 같다
+void distroyArrayList(arrayList* al);
 
-extern arrayList* creatArrayList(int size);
-extern void distroyArrayList(arrayList* al);
+int isEmptyArrayList(arrayList* al);
+int isFullArrayList(arrayList* al);
+int sizeArrayList(arrayList* al);
 
-extern int isEmptyArrayList(arrayList* al);
-extern int isFullArrayList(arrayList* al);
-extern int sizeArrayList(arrayList* al);
+int insertArrayList(arrayList* al, int pos, elementArrayList item);
+elementArrayList deleteArrayList(arrayList* al, int pos);
+void initArrayList(arrayList* al);
 
-extern int insertArrayList(arrayList* al, int pos, elementArrayList item);
-extern elementArrayList deleteArrayList(arrayList* al, int pos);
-extern void initArrayList(arrayList* al);
+elementArrayList getitemArrayList(arrayList* al, int pos);
+int replaaceItemArrayList(arrayList* al, int pos, elementArrayList item);
 
-extern elementArrayList getitemArrayList(arrayList* al, int pos);
-extern int replaaceItemArrayList(arrayList* al, int pos, elementArrayList item);
-
-extern elementArrayList printArrayList(arrayList* al);
+elementArrayList printArrayList(arrayList* al);

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef int elementArrayList;
+typedef unsigned int elementArrayList;
 
 typedef struct arrayListType {
 	elementArrayList* data;

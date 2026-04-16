@@ -12,7 +12,10 @@ arrayList* creatArrayList(int size) {
 
 	return al;
 }
-
+void reallocArrayList(arrayList* al) {
+	int alSize = al->size;
+	realloc(al, (alSize + 1) * sizeof(arrayList));
+}
 void distroyArrayList(arrayList* al) {
 	free(al->data);
 	free(al);

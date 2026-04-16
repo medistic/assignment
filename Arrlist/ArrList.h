@@ -20,6 +20,7 @@ typedef struct arrayListType {
 //와 같다
 
 extern arrayList* creatArrayList(int size);
+extern void reallocArrayList(arrayList* al);
 extern void distroyArrayList(arrayList* al);
 
 extern int isEmptyArrayList(arrayList* al);

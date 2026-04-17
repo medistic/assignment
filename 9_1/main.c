@@ -25,4 +25,5 @@ int main() {
 	deleteArrayList(myArrayList, 2);
 
 	printArrayList(myArrayList);
+	destroySparseMatrix(myArrayList);
 }

@@ -20,7 +20,7 @@ extern int insertArrayList(arrayList* al,
 	int pos, elementArrayList item);
 extern elementArrayList deleteArrayList(
 	arrayList* al, int pos);
-extern int initArrayList(arrayList* al);
+extern int initArrayList(arrayList* al);//초기화(clear)
 extern elementArrayList getItemArrayList(
 	arrayList* al, int pos);
 extern int replaceItemArrayList(arrayList* al,

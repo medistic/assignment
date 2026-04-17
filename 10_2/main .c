@@ -37,6 +37,8 @@ int main() {
 
 	printSparseMatrix(sm2);
 
-	destroySparseMatrix(sm1);
-	destroySparseMatrix(sm2);
+	deleteArrayList(sm1->al, 0);
+	deleteArrayList(sm2->al, 0);
+	free(sm1);
+	free(sm2);
 }

@@ -61,7 +61,7 @@ int insertArrayList(arrayList* al,
 
 elementArrayList deleteArrayList(
 	arrayList* al, int pos) {
-	if (pos < 0 || pos > al->size - 1) {
+	if (pos < 0 || pos >= al->size - 1) {
 		return 0;
 	}
 
@@ -77,13 +77,16 @@ elementArrayList deleteArrayList(
 }
 
 int initArrayList(arrayList* al) {
+	if (al == NULL) { 
+        return 1;    
+    }
 	al->size =0;
   return 0;
 }
 
 elementArrayList getItemArrayList(
 	arrayList* al, int pos) {
-  if (pos < 0 || pos > al->size) {
+  if (pos < 0 || pos >= al->size) {
 		return 0;
 	}
 	return al->data[pos];

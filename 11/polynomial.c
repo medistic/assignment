@@ -75,7 +75,6 @@ void parsePolynomial(polynomial* p, char* str) {
 	char* token = strtok(str, "+");
 	while (token != NULL) {
 		int coef, expo;
-		// "%dX^%d" 형식으로 계수와 지수 추출
 		if (sscanf(token, "%dX^%d", &coef, &expo) == 2) {
 			addItemPolynomial(p, (elementType) { coef, expo });
 		}

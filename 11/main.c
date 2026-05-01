@@ -14,7 +14,6 @@ int main() {
     printf("두 번째 다항식 입력 (예: 2X^1+5X^0): ");
     scanf("%255s", input2);
 
-    // 순차 리스트 기반 다항식 생성
     polynomial* p1 = createPolynomial(100);
     polynomial* p2 = createPolynomial(100);
 

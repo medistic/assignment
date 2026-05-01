@@ -8,10 +8,10 @@ int main() {
     char input1[256];
     char input2[256];
 
-    printf("첫 번째 다항식 입력 (예: 3X^2+2X^1+1X^0): ");
+    printf("first polynomial: ");
     scanf("%255s", input1);
 
-    printf("두 번째 다항식 입력 (예: 2X^1+5X^0): ");
+    printf("second polynomial ");
     scanf("%255s", input2);
 
     polynomial* p1 = createPolynomial(100);

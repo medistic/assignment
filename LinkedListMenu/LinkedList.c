@@ -197,3 +197,44 @@ PointType* nextItemLinkedList(LinkedList* li, int pre) {
 	}
 	return nPtr->next;
 }
+PointType deleteitemLinkedList(LinkedList* li, PointType item) {
+	PointType* tPtr = li->head;
+	PointType* pre = NULL;
+
+	
+	for (int i = 0; i < li->size; i++) {
+		if (tPtr->x == item.x) {
+			if (pre == NULL) {
+				return deleteFirstLinkedList(li);
+			}
+			pre->next = tPtr->next;
+
+			PointType temp = *tPtr;
+			free(tPtr);
+
+			li->size--;
+			return temp;
+		}
+		else {
+			pre = tPtr;
+			tPtr = tPtr->next;
+		}
+	}
+	return (PointType) { 0, 0 };
+}
+
+LinkedList* insertAtLinkedList(LinkedList* li, int at, PointType item) {
+
+	
+	if (at == 0) {
+		insertFirstLinkedList(li, item);
+		return li;
+	}
+	PointType* nPtr = li->head;
+
+	for (int i = 0; i < at - 1; i++) {
+		nPtr = nPtr->next;
+	}
+	insertItemLinkedList(li, nPtr, item);
+	return li;
+}

@@ -29,17 +29,11 @@ int main() {
 			int at;
 			scanf(" %d", &item.x);
 			scanf(" %d", &at);
-			if (at == 0) {
-				insertFirstLinkedList(myList1, item);
-				continue;
-			}
-			PointType* nPtr = myList1->head;
-
-			for (int i = 0; i < at - 1; i++) {
-				nPtr = nPtr->next;
-			}
-			insertItemLinkedList(myList1, nPtr, item);
+			
+			
+			insertAtLinkedList(myList1, at, item);
 		}
+			
 		else if (menu == 4) {
 			int at;
 			scanf(" %d", &at);

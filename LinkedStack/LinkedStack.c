@@ -1,4 +1,4 @@
-#include "Linke.Stack.h"
+#include "LinkedStack.h"
 
 extern LinkedStack* createLinkedStack() {
 	LinkedStack* s;

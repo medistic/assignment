@@ -1,50 +1,23 @@
-#include "LinkedStack.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-extern LinkedStack* createLinkedStack() {
-	LinkedStack* s;
-	s->head = NULL;
-	s->size = 0;
-	return s;
-}
-extern int destroyLinkedStack(LinkedStack* s) {
-	while (s->size != 0) {
-		popLinkedStack(s);
-	}
-	free(s);
-	return 0;
-}
-extern int emptyLinkedStack(LinkedStack* s) {
-	if (s->size == 0) {
-		return 1;
-	}
-	return 0;
-}
-extern int fullLinkedStack(LinkedStack* s) {
-	return 0;
-}
-extern int pushLinkedStack(LinkedStack* s, StackElement item) {
-	node* temp = (node*)malloc(sizeof(node));
-	temp->data = item;
-	temp->next = s->head;
-	s->head = temp;
-	s->size++;
-	return 0;
-}
-extern int popLinkedStack(LinkedStack* s) {
-	node* temp = s->head;
-	s->head = s->head->next;
-	free(temp);
-	s->size--;
-	return 0;
-}
-extern int printLinkedStack(LinkedStack* s) {
-	node* temp=s->head;
-	while(temp!=NULL){
-	printf("%d", temp->data);
-	temp = temp->next;
-}
-	return 0;
-}
-StackElement peakLinkedStack(LinkedStack* s) {
-	return s->head->data;
-}
+typedef char* StackElement;
+typedef struct node {
+	StackElement data;
+	struct node* next;
+
+}node;
+typedef struct LinkedStack {
+	node* head;
+	int size;
+}LinkedStack;
+
+extern LinkedStack* createLinkedStack();
+extern int destroyLinkedStack(LinkedStack* s);
+extern int emptyLinkedStack(LinkedStack* s);
+extern int fullLinkedStack(LinkedStack* s);
+extern int pushLinkedStack(LinkedStack* s, StackElement item);
+extern StackElement popLinkedStack(LinkedStack* s);
+extern int printLinkedStack(LinkedStack* s);
+extern StackElement peakLinkedStack(LinkedStack* s);

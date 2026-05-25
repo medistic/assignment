@@ -85,7 +85,7 @@ int evalPostfix(char* postfix) {
 			stackElement valueElement;
 			valueElement.value = (int)(postfix[i] - '0');
 			pushArrayStack(valueStack, valueElement);
-			printf("current: %c", postfix[i]);
+			printf("current: %c\n", postfix[i]);
 			printArrayStack(valueStack);
 		}
 		else if (postfix[i] == '*') {
@@ -94,7 +94,7 @@ int evalPostfix(char* postfix) {
 			stackElement item;
 			item.value = i2.value* i1.value;
 			pushArrayStack(valueStack, item);
-			printf("current: %c", postfix[i]);
+			printf("current: %c\n", postfix[i]);
 			
 			printArrayStack(valueStack);
 		}
@@ -104,7 +104,7 @@ int evalPostfix(char* postfix) {
 			stackElement item;
 			item.value = i2.value / i1.value;
 			pushArrayStack(valueStack, item);
-			printf("current: %c", postfix[i]);
+			printf("current: %c\n", postfix[i]);
 			
 			printArrayStack(valueStack);
 		}
@@ -114,7 +114,7 @@ int evalPostfix(char* postfix) {
 			stackElement item;
 			item.value = i2.value + i1.value;
 			pushArrayStack(valueStack, item);
-			printf("current: %c", postfix[i]);
+			printf("current: %c\n", postfix[i]);
 			
 			printArrayStack(valueStack);
 		}

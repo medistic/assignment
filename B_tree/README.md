@@ -1,36 +1,3 @@
-# 과제 02: 이진트리 프로그램
-
-각 구현은 헤더, 구현 파일, 실행 파일의 3개 파일로 구성되어 있습니다.
-
-## 입력 규칙
-
-- 노드 이름은 한 글자이며 서로 달라야 합니다.
-- 기본 형식: `부모(왼쪽,오른쪽)`
-- 빈 자식은 공백으로 입력할 수 있습니다.
-  - `a( ,b)`: 왼쪽 자식 없음
-  - `a(b, )`: 오른쪽 자식 없음
-- 예시: `a(b(d,e),c( ,f))`
-
-## 컴파일
-
-### 배열 방식
-
-```sh
-cd array_tree
-gcc -std=c11 -Wall -Wextra -pedantic main.c array_tree.c -o array_tree
-./array_tree
-```
-
-### 연결 자료구조 방식
-
-```sh
-cd linked_tree
-gcc -std=c11 -Wall -Wextra -pedantic main.c linked_tree.c -o linked_tree
-./linked_tree
-```
-
-높이는 루트 노드를 1로 계산합니다. 편향 이진트리는 모든 비단말 노드가
-같은 방향의 자식 하나만 갖는 경우로 정의했습니다.
 
 ## 3-[1] 배열과 연결 자료구조의 메모리 사용량 비교
 
